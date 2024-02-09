@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<style type="text/css">
+<!--
+.Estilo1 {color: #00FF00}
+body {
+	background-color: #000000;
+}
+-->
+</style>
+</head>
+
+<body>
+<div align="justify">
+  <pre class="Estilo1">; Este programa suma dos n&uacute;meros y muestra el resultado 
+.model small ; Define el modelo de memoria  
+.stack 100h ; Reserva espacio para la pila  
+.data ; Inicia la secci&oacute;n de datos  
+num1 dw 10 ; Define una variable de 16 bits llamada num1 con el valor 10  
+num2 dw 20 ; Define una variable de 16 bits llamada num2 con el valor 20  
+resultado dw ? ; Define una variable de 16 bits llamada resultado sin inicializar  
+.code ; Inicia la secci&oacute;n de c&oacute;digo  
+inicio: ; Define una etiqueta llamada inicio  
+mov ax, @data ; Mueve la direcci&oacute;n de la secci&oacute;n de datos al registro AX  
+mov ds, ax ; Mueve el valor del registro AX al registro DS  
+mov ax, num1 ; Mueve el valor de la variable num1 al registro AX  
+add ax, num2 ; Suma el valor de la variable num2 al registro AX  
+mov resultado, ax ; Mueve el valor del registro AX a la variable resultado  
+mov ah, 4ch ; Mueve el valor 4Ch al registro AH  
+int 21h ; Interrumpe el programa y devuelve el control al sistema operativo  
+end inicio ; Finaliza el programa y salta a la etiqueta inicio
+</pre>
+  <div align="left">
+    <pre class="Estilo1">&nbsp;</pre>
+    <p class="Estilo1">El anterior es un  ejemplo de c&oacute;digo en assembler x86 que suma dos n&uacute;meros y  muestra el resultado.    </p>
+    <p class="Estilo1">&nbsp;</p>
+    <p class="Estilo1">Prueba el compilador online:<a href="https://www.mycompiler.io/es/new/asm-x86_64"> Aqui</a></p>
+  </div>
+</div>
+</body>
+</html>
